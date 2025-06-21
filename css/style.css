@@ -1,0 +1,112 @@
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.main-nav {
+  width: 100%;
+  background: #111;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 16px;
+  height: 60px;
+  box-sizing: border-box;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+}
+
+.nav-logo {
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: #fff;
+  letter-spacing: 1px;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 18px;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links li a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 500;
+  padding: 8px 12px;
+  border-radius: 6px;
+  transition: background 0.2s, color 0.2s;
+}
+
+.nav-links li a:hover {
+  background: #43cea2;
+  color: #111;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: calc(100vh - 60px);
+  margin-top: 60px;
+  height: calc(100vh - 60px);
+}
+
+#dino-game {
+  display: block;
+  width: 98vw;
+  max-width: 600px;
+  height: 40vw;         /* Lebih tinggi, misal 40% dari lebar layar */
+  max-height: 260px;    /* Batas maksimal di desktop */
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 24px rgba(30,60,114,0.12);
+  touch-action: none;
+  margin: 0 auto;
+}
+
+/* Responsive: khusus HP */
+@media (max-width: 600px) {
+  #dino-game {
+    width: 98vw;
+    height: 50vw;       /* Lebih tinggi di HP */
+    max-width: 98vw;
+    max-height: 320px;
+  }
+  .container {
+    margin-top: 60px;
+    min-height: calc(100vh - 60px);
+    height: calc(100vh - 60px);
+  }
+  .main-nav {
+    flex-direction: row;         /* Tetap row */
+    align-items: center;
+    height: 48px;
+    padding: 0 8px;
+  }
+  .nav-logo {
+    font-size: 1.1rem;
+  }
+  .nav-links {
+    gap: 10px;
+  }
+  .nav-links li a {
+    font-size: 0.98rem;
+    padding: 6px 8px;
+  }
+}

@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RimoriLab - Aplikasi</title>
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .app-grid-container {
+      width: 100vw;
+      height: calc(100vh - 60px);
+      margin-top: 60px;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      /* Tambahkan padding atas agar tidak menempel header */
+      padding: 32px 0 0 0;
+      box-sizing: border-box;
+      overflow-y: auto;
+    }
+
+    /* Tambahkan atau update di style.css */
+.app-grid {
+  width: 100%;
+  max-width: 1200px;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-auto-rows: 1fr;
+  gap: 18px;
+  padding: 0 12px;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+/* Tablet: 3 kolom, 4 baris */
+@media (max-width: 1024px) {
+  .app-grid {
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: 1fr;
+    gap: 14px;
+    width: 100%;
+    max-width: 700px;
+    padding: 0 12px;
+    margin: 0 auto;
+  }
+}
+
+/* Mobile: 2 kolom, auto baris */
+@media (max-width: 600px) {
+  .app-grid {
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: minmax(140px, 1fr);
+    gap: 8px;
+    width: 100%;
+    max-width: 98vw;
+    padding: 0 2vw;
+    margin: 0 auto;
+  }
+}
+
+    .app-box {
+      background: #fff;
+      border-radius: 14px;
+      box-shadow: 0 4px 24px rgba(30,60,114,0.10);
+      width: 100%;
+      height: 100%;
+      min-width: 0;
+      min-height: 0;
+      transition: box-shadow 0.2s;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .app-box:hover {
+      box-shadow: 0 8px 32px rgba(30,60,114,0.18);
+    }
+
+    /* Tambahkan atau ganti di style aplikasi.html atau style.css */
+.box-content {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  box-sizing: border-box;
+  padding: 0;
+  position: relative;
+}
+
+.box-img {
+  width: 90%;
+  max-width: 140px;
+  aspect-ratio: 1/1;
+  object-fit: cover;
+  margin-top: 12px;
+  margin-bottom: 10px;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(30,60,114,0.08);
+  display: block;
+}
+
+.box-title {
+  font-size: 1.08rem;
+  font-weight: bold;
+  margin: 12px 0 0 0;
+  text-align: center;
+  letter-spacing: 1px;
+}
+
+.box-btn {
+  display: inline-block;
+  padding: 8px 24px;
+  background: #43cea2;
+  color: #fff;
+  border-radius: 6px;
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 500;
+  margin-top: 14px;
+  margin-bottom: 0;
+  transition: background 0.2s;
+  position: static;
+  left: auto;
+  bottom: auto;
+  transform: none;
+  width: auto;
+  max-width: 90%;
+  text-align: center;
+}
+.box-btn:hover {
+  background: #34ace0;
+}
+
+/* Responsive fix for mobile */
+@media (max-width: 600px) {
+  .box-img {
+    width: 90%;
+    max-width: 120px;
+    margin-top: 10px;
+    margin-bottom: 8px;
+  }
+  .box-title {
+    font-size: 1rem;
+    margin-top: 10px;
+  }
+  .box-btn {
+    font-size: 0.98rem;
+    padding: 8px 0;
+    width: 90%;
+    margin-top: 10px;
+  }
+}
+
+    @media (max-width: 900px) {
+      .app-grid {
+        width: 98vw;
+        max-width: 98vw;
+        gap: 8px;
+        padding: 0 4vw;
+      }
+    }
+    @media (max-width: 600px) {
+      .app-grid-container {
+        margin-top: 48px;
+        height: calc(100vh - 48px);
+        padding-top: 12px;
+        padding-bottom: 12px;
+      }
+      .app-grid {
+        grid-template-columns: repeat(2, 1fr);
+        grid-auto-rows: minmax(140px, 1fr);
+        gap: 8px;
+        width: 98vw;
+        max-width: 98vw;
+        padding: 0 2vw;
+        height: auto;
+        max-height: none;
+        overflow-y: visible;
+      }
+      .app-box {
+        border-radius: 8px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav class="main-nav">
+    <div class="nav-logo">RimoriLab</div>
+    <ul class="nav-links">
+      <li><a href="index.html">Beranda</a></li>
+      <li><a href="aplikasi.html" class="active">Aplikasi</a></li>
+    </ul>
+  </nav>
+  <div class="app-grid-container">
+    <div class="app-grid">
+      <div class="app-box">
+        <div class="box-content">
+          <img src="mergefellas.png" alt="Merge Fellas" class="box-img">
+          <div class="box-title">MERGE FELLAS</div>
+          <a href="https://sub2unlock.io/K9CrG" target="_blank" rel="noopener" class="box-btn">DOWNLOAD</a>
+        </div>
+      </div>
+      <div class="app-box"></div>
+      <div class="app-box"></div>
+      <div class="app-box"></div>
+      <div class="app-box"></div>
+      <div class="app-box"></div>
+      <div class="app-box"></div>
+      <div class="app-box"></div>
+      <div class="app-box"></div>
+      <div class="app-box"></div>
+    </div>
+  </div>
+</body>
+</html>
